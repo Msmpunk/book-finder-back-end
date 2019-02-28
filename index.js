@@ -1,17 +1,16 @@
-const express = require('express');
-const app = express();
+// const express = require('express');
+
+import express from 'express';
+import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
+import session from 'express-session';
+import cors from 'cors';
 
 const port = process.env.PORT || 4000;
-
-const mongoose = require('mongoose');
-
-const bodyParser = require('body-parser');
-const api_routes = require('./api/routes/routes');
-
-const session = require('express-session');
-const cors = require('cors');
-
 const production = process.env.NODE_ENV === 'production';
+
+const api_routes = require('./api/routes/routes');
+const app = express();
 
 app.use(cors());
 
